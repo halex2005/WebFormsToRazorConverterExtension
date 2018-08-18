@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <PackageId>RazorConverter.ReSharper</PackageId>
+    <Version>0.1.0.0</Version>
+    <Authors>Aleksei Kharlov aka halex2005</Authors>
+    <Company />
+    <Product />
+    <Title>RazorConverter</Title>
+    <Copyright>Copyright (c) Aleksei Kharlov aka halex2005</Copyright>
+    <Description>Plugin for resharper, for converting ASP.NET WebForms to Razor.</Description>
+    <PackageTags>webforms razor aspx ascx cshtml</PackageTags>
+    <PackageProjectUrl>https://github.com/halex2005/WebFormsToRazorConverterExtension</PackageProjectUrl>
+    <RootNamespace>RazorConverter</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\ReSharper\Debug</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\ReSharper\Release</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="RazorConverter.ReSharper.nuspec" />
+    <None Remove="packages.RazorConverter.config" />
+    <None Remove="packages.RazorConverter.ReSharper.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="JetBrains.ReSharper.SDK" Version="2018.1.4" PrivateAssets="All" />
+    <PackageReference Include="Wave" Version="[12.0]" />
+  </ItemGroup>
+</Project>
