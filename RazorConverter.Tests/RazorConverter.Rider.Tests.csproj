@@ -3,6 +3,7 @@
     <TargetFramework>net461</TargetFramework>
     <RootNamespace>RazorConverter.Tests</RootNamespace>
     <IsPackable>false</IsPackable>
+    <DefineConstants>$(DefineConstants);RIDER</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Rider\Debug</OutputPath>

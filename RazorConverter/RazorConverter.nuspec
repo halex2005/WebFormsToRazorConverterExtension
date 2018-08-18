@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <title>ASP.NET WebForms to Razor Converter</title>
+    <id>RazorConverter.RazorConverter</id>
+    <version>0.2</version>
+    <authors>Aleksei Kharlov aka halex2005</authors>
+    <owners>halex2005</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/halex2005/WebFormsToRazorConverterExtension</projectUrl>
+    <licenseUrl>https://github.com/halex2005/WebFormsToRazorConverterExtension/blob/master/LICENSE</licenseUrl>
+    <description>Allows automatically convert WebForms pages to Razor</description>
+    <dependencies>
+      <dependency id="Wave" version="[12.0]" />
+    </dependencies>
+    <tags>aspx ascx razor cshtml converter</tags>
+  </metadata>
+  <files>
+    <file src="bin\ReSharper\Release\net461\RazorConverter.dll" target="DotFiles" />
+  </files>
+</package>

@@ -1,4 +1,3 @@
-
 using JetBrains.Application.BuildScript.Application.Zones;
 using JetBrains.ReSharper.TestFramework;
 using JetBrains.TestFramework;

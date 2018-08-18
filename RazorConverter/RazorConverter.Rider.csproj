@@ -8,6 +8,7 @@
     <Company />
     <Product />
     <Title>RazorConverter</Title>
+    <DefineConstants>$(DefineConstants);RIDER</DefineConstants>
     <Copyright>Copyright (c) Aleksei Kharlov aka halex2005</Copyright>
     <Description>Plugin for resharper, for converting ASP.NET WebForms to Razor.</Description>
     <PackageTags>webforms razor aspx ascx cshtml</PackageTags>
@@ -28,8 +29,5 @@
   <ItemGroup>
     <PackageReference Include="JetBrains.Rider.SDK" Version="2018.1.4" PrivateAssets="All" />
     <PackageReference Include="Wave" Version="[12.0]" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Actions\Actions.xml" />
   </ItemGroup>
 </Project>
