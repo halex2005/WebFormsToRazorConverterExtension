@@ -1,6 +1,5 @@
 ﻿using JetBrains.Annotations;
 using JetBrains.Application.Settings;
-using JetBrains.Application.Settings.WellKnownRootKeys;
 using JetBrains.Application.UI.Options;
 using JetBrains.Application.UI.Options.OptionPages;
 using JetBrains.Application.UI.Options.OptionsDialog;
@@ -28,24 +27,17 @@ namespace RazorConverter.Options
 
 			deleteOriginalFile.SetValue(optionsSettingsSmartContext
 				.StoreOptionsTransactionContext
-				.GetValue((RazorConverterSettingsKey key) => key.DeleteOriginalFile));
+				.GetValue((RazorConverterSettings key) => key.DeleteOriginalFile));
 
 			deleteOriginalFile.Change.Advise(lifetime, a =>
 			{
 				if (!a.HasNew) return;
 				optionsSettingsSmartContext
 					.StoreOptionsTransactionContext
-					.SetValue((RazorConverterSettingsKey key) => key.DeleteOriginalFile, a.New);
+					.SetValue((RazorConverterSettings key) => key.DeleteOriginalFile, a.New);
 			});
 
-			AddBoolOption((RazorConverterSettingsKey key) => key.DeleteOriginalFile, "Delete original file");
+			AddBoolOption((RazorConverterSettings key) => key.DeleteOriginalFile, "Delete original file");
 		}
-	}
-
-	[SettingsKey(typeof(EnvironmentSettings), "RazorConverter settings")]
-	public class RazorConverterSettingsKey
-	{
-		[SettingsEntry(false, "Delete original file")]
-		public bool DeleteOriginalFile;
 	}
 }
