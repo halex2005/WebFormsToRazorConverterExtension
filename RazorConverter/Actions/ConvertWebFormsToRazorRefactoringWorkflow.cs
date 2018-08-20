@@ -44,7 +44,7 @@ namespace RazorConverter.Actions
 
         public override bool IsAvailable(IDataContext context)
         {
-            DataModel = new ConvertWebFormsToRazorDataModel(ConvertWebFormsToRazorAction.GetSourceFileToConvert(context));
+            DataModel = new ConvertWebFormsToRazorDataModel(context.GetSourceFilesToConvert());
             return DataModel.FilesToConvert.Length > 0;
         }
 
@@ -63,14 +63,13 @@ namespace RazorConverter.Actions
 
         private void DeleteOriginalFiles()
         {
-            if (optionsStore.GetSettings().DeleteOriginalFile)
+            if (!optionsStore.GetSettings().DeleteOriginalFile) return;
+            
+            using (var transactionCookie = Solution.CreateTransactionCookie(DefaultAction.Commit, "Refactroring"))
             {
-                using (var transactionCookie = Solution.CreateTransactionCookie(DefaultAction.Commit, "Refactroring"))
+                foreach (var file in DataModel.FilesToConvert)
                 {
-                    foreach (var file in DataModel.FilesToConvert)
-                    {
-                        transactionCookie.Remove(file.OriginalFile, true);
-                    }
+                    transactionCookie.Remove(file.OriginalFile, true);
                 }
             }
         }
