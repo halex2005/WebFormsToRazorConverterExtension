@@ -1,0 +1,3 @@
+[submodule "third-party/razor-converter"]
+	path = third-party/razor-converter
+	url = https://github.com/halex2005/razor-converter.git
